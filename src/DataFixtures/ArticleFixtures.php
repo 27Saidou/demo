@@ -31,12 +31,11 @@ class ArticleFixtures extends Fixture
                 ->setCreatedAt($faker->dateTimeBetween('-6 months'))
                 ->setCategory($category);
                 $manager->persist($article);
+
                 //Creer des commentaires 4 et 6
                 for($k= 0;$k<=10; $k++){
-                    $comment=new Comment();
+                    $comment =new Comment();
                     $content = '<p>'.join($faker->paragraphs(2),'</p><p>').'</p>';
-
-                    $now=new \DateTime();
                     $days= (new \DateTime())->diff($article->getCreatedAt())->days;
 
                     $comment->setAuthor($faker->name)

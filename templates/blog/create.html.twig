@@ -4,14 +4,15 @@
     <h1>Creation d'un article !</h1>
     {{ form_start (formArticle)}}
     {{ form_row (formArticle.title, {'attr': {'placeholder':"Titre de l'article"}})}}
+    {{ form_row (formArticle.category)}}
     {{ form_row (formArticle.content, {'attr':{'placeholder':"Contenu de l' article"}})}}
     {{ form_row (formArticle.image, {'attr': {'placeholder':"URL de l'Image"}})}}
     <button class="btn btn-success">
-    {% if editMode %}
-    Enregister les modifications
-    {% else %}
-    Ajouter article
-    {% endif %}
-</button>
+        {% if editMode %}
+            Enregister les modifications
+        {% else %}
+            Ajouter article
+        {% endif %}
+    </button>
     {{form_end (formArticle)}}
 {% endblock %}
